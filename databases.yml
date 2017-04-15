@@ -1,0 +1,10 @@
+---
+- name: playbook for databases
+  hosts: databases
+  become: true
+  vars_files:
+    - "host_vars/{{ inventory_hostname }}/postgres.yml"
+    - "keys/{{ inventory_hostname }}/postgres.yml"
+
+  roles:
+    - role: postgres

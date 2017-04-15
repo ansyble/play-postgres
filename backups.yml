@@ -1,0 +1,9 @@
+---
+- name: playbook for backups
+  hosts: backups
+  become: true
+  vars_files:
+    - "host_vars/{{ inventory_hostname }}/backups.yml"
+
+  roles:
+    - role: cron
