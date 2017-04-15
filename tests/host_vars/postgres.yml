@@ -1,0 +1,24 @@
+---
+postgres_databases:
+  - name: pg.master
+    volumes:
+      - pg.master:/var/lib/postgresql/data
+    ports:
+      - 5442:5432
+    env:
+      POSTGRES_PASSWORD: "{{ postgres_pass }}"
+      DB_NAME: defocus
+      DB_USER: batou
+      DB_PASSWORD: "{{ postgres_db_pass }}"
+      REPLICATION_USER: scruffy
+      REPLICATION_PASS: "{{ postgres_scruffy_pass }}"
+
+  - name: pg.slave
+    volumes:
+      - pg.slave:/var/lib/postgresql/replica
+    env:
+      POSTGRES_PASSWORD: "{{ postgres_slave_pass }}"
+      REPLICATION_MODE: slave
+      REPLICATION_USER: replica
+      REPLICATION_PASS: "{{ postgres_scruffy_pass }}"
+      REPLICATION_HOST: pg.master

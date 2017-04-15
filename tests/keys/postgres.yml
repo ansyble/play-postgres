@@ -1,0 +1,5 @@
+---
+postgres_pass: test
+postgres_db_pass: test
+postgres_scruffy_pass: test
+postgres_slave_pass: test
