@@ -5,6 +5,8 @@ postgres_databases:
       - pg.master:/var/lib/postgresql/data
     ports:
       - 5442:5432
+    networks:
+      - postgres
     env:
       POSTGRES_PASSWORD: "{{ postgres_pass }}"
       DB_NAME: defocus
