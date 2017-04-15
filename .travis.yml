@@ -20,7 +20,7 @@ install:
   - sudo pip install docker docker-compose
 
   # Install ansible
-  - sudo pip install
+  - sudo pip install ansible
 
   # Check ansible version
   - ansible --version
