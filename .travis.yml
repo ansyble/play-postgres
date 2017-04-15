@@ -1,0 +1,39 @@
+---
+language: python
+python: "2.7"
+
+addons:
+  apt:
+    packages:
+    - python-pip
+
+before_install:
+  - deactivate
+  - sudo apt-get update -qq
+  - sudo apt-get install -y docker-engine
+
+install:
+  # Install Python client for docker
+  - sudo pip install docker docker-compose
+
+  # Install ansible
+  - sudo pip install
+
+  # Check ansible version
+  - ansible --version
+
+before_script:
+  # Test directories
+  - mv tests/host_vars host_vars/test
+  - mv tests/inventory test
+  - mv tests/keys keys/test
+
+  # Requirements
+  - ansible-galaxy install -r requirements.yml
+
+script:
+  # Syntax check
+  - ansible-playbook databases.yml -i test --syntax-check
+
+  # Play test
+  - ansible-playbook databases.yml -i test --sudo
