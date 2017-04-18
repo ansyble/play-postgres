@@ -6,7 +6,7 @@ postgres_databases:
     ports:
       - 5442:5432
     networks:
-      - postgres
+      - name: postgres
     env:
       POSTGRES_PASSWORD: "{{ postgres_pass }}"
       DB_NAME: defocus
