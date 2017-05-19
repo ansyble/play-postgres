@@ -9,9 +9,9 @@ postgres_databases:
       - name: postgres
     env:
       POSTGRES_PASSWORD: "{{ postgres_pass }}"
-      DB_NAME: defocus
-      DB_USER: batou
-      DB_PASSWORD: "{{ postgres_db_pass }}"
+      POSTGRES_DB_NAME: test
+      POSTGRES_DB_USER: me
+      POSTGRES_DB_PASSWORD: "{{ postgres_db_pass }}"
       REPLICATION_USER: scruffy
       REPLICATION_PASS: "{{ postgres_scruffy_pass }}"
 
