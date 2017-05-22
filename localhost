@@ -1,0 +1,8 @@
+[all:vars]
+ansible_connection=local
+
+[webservers]
+domake.io
+
+[drone]
+domake.io
