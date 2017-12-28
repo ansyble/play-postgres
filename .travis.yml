@@ -32,4 +32,4 @@ script:
   - ansible-playbook databases.yml -i test --syntax-check
 
   # Play test
-  - ansible-playbook databases.yml -i test --sudo
+  - ansible-playbook databases.yml -i test --become
