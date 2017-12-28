@@ -10,7 +10,7 @@
 
 ```sh
 $ make help
-Please use `make <target>' where <target> is one of
+Please use 'make <target>' where <target> is one of
   encrypt       Encrypting unencrypted keys
   decrypt       Decrypting encrypted keys
   install       Install roles dependencies
@@ -20,5 +20,5 @@ Please use `make <target>' where <target> is one of
 * Server orchestration:
 
 ```sh
-$ make play inventory=domake.io playbook=[databases|backups] tags=tag1,tag2
+$ make play host=domake.io playbook=[databases|backups] tags=tag1,tag2
 ```

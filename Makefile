@@ -12,7 +12,7 @@ endif
 KEYS_PATH = $(shell find keys/$(host) -type f)
 
 help:
-	@echo "Please use \`make <target>' where <target> is one of"
+	@echo "Please use 'make <target>' where <target> is one of"
 	@echo "  encrypt       Encrypting unencrypted keys"
 	@echo "  decrypt       Decrypting encrypted keys"
 	@echo "  install       Install roles dependencies"
